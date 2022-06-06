@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h3>Home Page</h3>
+<div class="container-fluid" style="background-color:lightgrey;">
+    <div class="col-lg-6">
+        <h4>Description</h4>
+        <div>
+            <p>This system allows users to upload files, images of video of their choice and be able to delete and download them as well.</p>
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+        <h4>Option Selection</h4>
+
+        <div>
+            <form>
+                <input type="radio" id="mDocument" name="nDocument" value="Document">
+                <label for="nDocument">Document</label><br>
+                <input type="radio" id="mImage" name="nImage" value="Image">
+                <label for="nDocument">Image</label><br>
+                <input type="radio" id="mVideo" name="nVideo" value="Video">
+                <label for="nVideo">Video</label><br>
+
+                <button id="browse" type="button" name="mBrowse">Browse</button>
+                <label for="mBrowsw"><span id="lbrowse"></span></label><br>
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
