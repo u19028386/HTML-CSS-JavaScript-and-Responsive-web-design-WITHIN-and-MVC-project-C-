@@ -5,8 +5,6 @@
 }
 
 
-
-
 <div class="well-sm">
     <div class="form-horizontal">
         @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -41,9 +39,15 @@
                         <label for="nVideo">Video</label>
                         <input type="radio" id="mVideo" name="ntype" value="nVideo"><br />
 
-                        <div><input type="file" name="files" value="Browse" id="browse" /></div>
+                        <div>
+                        <input type="file" name="files" value="Browse" id="browse" />
+                        </div>
+
                         <br />
-                        <div><input type="submit" value="Submit" id="submit1" /></div>
+                        <div>
+                        <input type="submit" value="Submit" id="submit1" />
+                        </div>
+
                     </div>
                 </div>
             </div>

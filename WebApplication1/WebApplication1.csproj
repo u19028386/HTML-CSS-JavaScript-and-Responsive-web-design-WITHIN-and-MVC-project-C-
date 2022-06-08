@@ -168,9 +168,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Download\FilePage.cshtml" />
-    <Content Include="Views\Home\mView.cshtml" />
-    <Content Include="Views\Home\m.cshtml" />
-    <Content Include="Views\Home\l.cshtml" />
     <Content Include="Views\Image\Index.cshtml" />
     <Content Include="Views\Video\Index.cshtml" />
   </ItemGroup>

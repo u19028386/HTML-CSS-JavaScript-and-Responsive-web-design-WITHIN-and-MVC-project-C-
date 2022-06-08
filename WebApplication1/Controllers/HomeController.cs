@@ -21,8 +21,6 @@ namespace WebApplication1.Controllers
             // Verify that the user selected a file
             // Not null and has a length
 
-            
-            
                 if (Files != null && Files.ContentLength > 0)
             {
 
@@ -31,7 +29,7 @@ namespace WebApplication1.Controllers
 
                 if (Request["ntype"] == "nDocument")
                 {
-                    // storing the file inside ~/App_Data folder
+                    // storing the file inside ~/App_Data/Documents folder
                     var path = Path.Combine(Server.MapPath("~/App_Data/Documents"), fileName);
                     Files.SaveAs(path);
 
@@ -39,7 +37,7 @@ namespace WebApplication1.Controllers
 
                 if (Request["ntype"] == "nImage")
                 {
-                    // storing the file inside ~/App_Data folder
+                    // storing the file inside ~/App_Data/Images folder
                     var path = Path.Combine(Server.MapPath("~/App_Data/Images"), fileName);
                     Files.SaveAs(path);
 
@@ -47,16 +45,11 @@ namespace WebApplication1.Controllers
 
                 if (Request["ntype"] == "nVideo")
                 {
-                    // storing the file inside ~/App_Data folder
+                    // storing the file inside ~/App_Data/Videos folder
                     var path = Path.Combine(Server.MapPath("~/App_Data/Videos"), fileName);
                     Files.SaveAs(path);
 
                 }
-
-
-
-
-
             }
             // redirect back to the index action to show the form once again
 
@@ -67,24 +60,6 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-
-        public ActionResult mView()
-        {
-            return View();
-        }
-
-        public ActionResult m()
-        {
-            return View();
-        }
-
-        public ActionResult l()
-        {
-            return View();
-        }
-
-
-
 
     }
 }

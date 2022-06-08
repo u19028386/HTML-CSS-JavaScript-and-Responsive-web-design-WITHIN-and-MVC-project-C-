@@ -28,32 +28,23 @@ namespace WebApplication1.Controllers
 
         }
 
-        public FileResult DownloadFile(string fileName) // Why fileName and not FileName????
-                                                        // Because of using.
+        public FileResult DownloadFile(string fileName)
         {
             //Build the File Path.
-
             string path = Server.MapPath("~/App_Data/Videos/") + fileName;
 
             //Read the File data into Byte Array.
             //Use a byte array becasue of octet-stream.
-
             byte[] bytes = System.IO.File.ReadAllBytes(path);
 
             //Send the File to Download.
-
-            //The OCTET-STREAM format is used for file attachments on the Web with an
-            //unknown file type. These .octet-stream files are arbitrary binary data
-            //files that may be in any multimedia format.
-
             return File(bytes, "application/octet-stream", fileName);
         }
 
         public ActionResult DeleteFile(string fileName)
         {
-            //Delete requires reading the files and then the allocation of a file path.
-            //The file is then deleted based on the identified file path.
-
+           
+            // getting path of file and storing byte array
             string path = Server.MapPath("~/App_Data/Videos/") + fileName;
             byte[] bytes = System.IO.File.ReadAllBytes(path);
 
