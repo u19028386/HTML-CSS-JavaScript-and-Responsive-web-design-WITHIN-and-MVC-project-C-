@@ -13,33 +13,38 @@ namespace WebApplication1.Controllers
         // GET: Download
         public ActionResult FilePage()
         {
-            string[] filePaths = Directory.GetFiles(Server.MapPath("~/App_Data/"));
 
+            string[] filePathImage = Directory.GetFiles(Server.MapPath("~/App_Data/"));
+            
             //Copy File names to Model collection.
             //The return below returns to the list here.
 
             List<FileModel> files = new List<FileModel>();
 
-            foreach (string filePath in filePaths)
+            foreach (string filePath in filePathImage)
             {
                 files.Add(new FileModel { FileName = Path.GetFileName(filePath) });
+
             }
+
+           
+
+
             return View(files);
             
         }
 
-        public FileResult DownloadFile(string fileName) // Why fileName and not FileName????
-                                                        // Because of using.
+        public FileResult DownloadFile(string fileName) 
         {
             //Build the File Path.
 
             string path = Server.MapPath("~/App_Data/") + fileName;
-
+          
             //Read the File data into Byte Array.
             //Use a byte array becasue of octet-stream.
 
             byte[] bytes = System.IO.File.ReadAllBytes(path);
-
+           
             //Send the File to Download.
 
             //The OCTET-STREAM format is used for file attachments on the Web with an
@@ -47,7 +52,9 @@ namespace WebApplication1.Controllers
             //files that may be in any multimedia format.
 
             return File(bytes, "application/octet-stream", fileName);
+           
         }
+
 
         public ActionResult DeleteFile(string fileName)
         {
