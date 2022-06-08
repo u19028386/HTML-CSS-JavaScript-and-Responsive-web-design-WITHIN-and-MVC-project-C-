@@ -21,16 +21,42 @@ namespace WebApplication1.Controllers
             // Verify that the user selected a file
             // Not null and has a length
 
-            if (Files != null && Files.ContentLength > 0)
+            
+            
+                if (Files != null && Files.ContentLength > 0)
             {
+
                 // get file name
                 var fileName = Path.GetFileName(Files.FileName);
 
-                // storing the file inside ~/App_Data folder
-                var path = Path.Combine(Server.MapPath("~/App_Data"), fileName);
+                if (Request["ntype"] == "nDocument")
+                {
+                    // storing the file inside ~/App_Data folder
+                    var path = Path.Combine(Server.MapPath("~/App_Data/Documents"), fileName);
+                    Files.SaveAs(path);
 
-                // The chosen default path for saving
-                Files.SaveAs(path);
+                }
+
+                if (Request["ntype"] == "nImage")
+                {
+                    // storing the file inside ~/App_Data folder
+                    var path = Path.Combine(Server.MapPath("~/App_Data/Images"), fileName);
+                    Files.SaveAs(path);
+
+                }
+
+                if (Request["ntype"] == "nVideo")
+                {
+                    // storing the file inside ~/App_Data folder
+                    var path = Path.Combine(Server.MapPath("~/App_Data/Videos"), fileName);
+                    Files.SaveAs(path);
+
+                }
+
+
+
+
+
             }
             // redirect back to the index action to show the form once again
 
@@ -38,6 +64,21 @@ namespace WebApplication1.Controllers
         }
 
         public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult mView()
+        {
+            return View();
+        }
+
+        public ActionResult m()
+        {
+            return View();
+        }
+
+        public ActionResult l()
         {
             return View();
         }

@@ -5,50 +5,51 @@
 }
 
 
-                
-                   <div class="well-sm">
-                       <div class="form-horizontal">
-                           @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 
 
-                           {
-                               <h3>Home Page</h3>
-                               <h5>My home page</h5>
-                               <div class="container-fluid" style="background-color:lightgrey;">
-                                   <div class="col-lg-6">
-                                       <h4>Description</h4>
-                                       <div>
-                                           <p>This system allows users to upload files, images of video of their choice and be able to delete and download them as well.</p>
-                                           <p>It allows the user to click on the radio button of their chose to pick the type of file they like to upload.</p>
-                                           <p>Users will then be directed to desired page to upload or delete file of chose.</p>
+<div class="well-sm">
+    <div class="form-horizontal">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 
-                                       </div>
 
-                                   </div>
+        {
+            <h3>Home Page</h3>
+            <h5>My home page</h5>
+            <div class="container-fluid" style="background-color:lightgrey;">
+                <div class="col-lg-6">
+                    <h4>Description</h4>
+                    <div>
+                        <p>This system allows users to upload files, images of video of their choice and be able to delete and download them as well.</p>
+                        <p>It allows the user to click on the radio button of their chose to pick the type of file they like to upload.</p>
+                        <p>Users will then be directed to desired page to upload or delete file of chose.</p>
 
-                                   <div class="col-lg-6">
-                                       <h4>Option Selection</h4>
-
-                                       <div>
-                                           
-                                               <label for="nDocument">Document</label>
-                                               <input type="radio" id="mDocument" name="nDocument" value="Document"><br />
-
-                                               <label for="nDocument">Image</label>
-                                               <input type="radio" id="mImage" name="nImage" value="Image"><br />
-
-                                               <label for="nVideo">Video</label>
-                                               <input type="radio" id="mVideo" name="nVideo" value="Video"><br />
-
-                                               <div><input type="file" name="files" value="Browse" id="browse" /></div>
-                                               <br />
-                                               <div><input type="submit" value="Submit" id="submit1" /></div>
-                                          </div>
-                                      </div>
-                                </div>
-                                   }
-                        </div>
                     </div>
-                                              
+
+                </div>
+
+                <div class="col-lg-6">
+                    <h4>Option Selection</h4>
+
+                    <div>
+
+                        <label for="nDocument">Document</label>
+                        <input type="radio" id="mDocument" name="ntype" value="nDocument"><br />
+
+                        <label for="nDocument">Image</label>
+                        <input type="radio" id="mImage" name="ntype" value="nImage"><br />
+
+                        <label for="nVideo">Video</label>
+                        <input type="radio" id="mVideo" name="ntype" value="nVideo"><br />
+
+                        <div><input type="file" name="files" value="Browse" id="browse" /></div>
+                        <br />
+                        <div><input type="submit" value="Submit" id="submit1" /></div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
 
 

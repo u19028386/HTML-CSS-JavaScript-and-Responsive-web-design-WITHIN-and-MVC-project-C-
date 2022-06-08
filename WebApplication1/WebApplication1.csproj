@@ -122,6 +122,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,9 +168,16 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Download\FilePage.cshtml" />
+    <Content Include="Views\Home\mView.cshtml" />
+    <Content Include="Views\Home\m.cshtml" />
+    <Content Include="Views\Home\l.cshtml" />
+    <Content Include="Views\Image\Index.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Documents\" />
+    <Folder Include="App_Data\Images\" />
+    <Folder Include="App_Data\Videos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
