@@ -41,9 +41,6 @@ namespace WebApplication1.Controllers
 
             }
 
-
-
-
             return View(files);
             
         }
@@ -56,13 +53,14 @@ namespace WebApplication1.Controllers
             string path = Server.MapPath("~/App_Data/Images/") + fileName;
             byte[] bytes = System.IO.File.ReadAllBytes(path);
 
+            //not working
             // for documents
-            //string pathd = Server.MapPath("~/App_Data/Documents/") + fileName;
-            //byte[] bytesd = System.IO.File.ReadAllBytes(pathd);
+            string pathd = Server.MapPath("~/App_Data/Documents/") + fileName;
+            byte[] bytesd = System.IO.File.ReadAllBytes(pathd);
 
             // for videos
-            //string pathv = Server.MapPath("~/App_Data/Videos/") + fileName;
-            //byte[] bytesv = System.IO.File.ReadAllBytes(pathv);
+            string pathv = Server.MapPath("~/App_Data/Videos/") + fileName;
+            byte[] bytesv = System.IO.File.ReadAllBytes(pathv);
 
 
 
@@ -81,19 +79,22 @@ namespace WebApplication1.Controllers
             string path = Server.MapPath("~/App_Data/Images/") + fileName;
             byte[] bytes = System.IO.File.ReadAllBytes(path);
 
+            //not working
             // for documents
-            //string pathd = Server.MapPath("~/App_Data/Documents/") + fileName;
-            //byte[] bytesd = System.IO.File.ReadAllBytes(pathd);
+            string pathd = Server.MapPath("~/App_Data/Documents/") + fileName;
+            byte[] bytesd = System.IO.File.ReadAllBytes(pathd);
 
+            //not working
             // for videos
-            //string pathv = Server.MapPath("~/App_Data/Videos/") + fileName;
-            //byte[] bytesv = System.IO.File.ReadAllBytes(pathv);
+            string pathv = Server.MapPath("~/App_Data/Videos/") + fileName;
+            byte[] bytesv = System.IO.File.ReadAllBytes(pathv);
 
             //deleting files
             System.IO.File.Delete(path);
-            //System.IO.File.Delete(pathd);
-            //System.IO.File.Delete(pathv);
 
+            //not working
+            System.IO.File.Delete(pathd);
+            System.IO.File.Delete(pathv);
 
             return RedirectToAction("FilePage");
         }
