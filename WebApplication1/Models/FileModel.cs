@@ -11,5 +11,10 @@ namespace WebApplication1.Models
         // what will be displayed
         [Display(Name = "File Name")]
         public string FileName { get; set; }
+
+        // allows communication between server and user
+        [Required(ErrorMessage = "Please select file.")]
+        [Display(Name = "Browse File")]
+        public HttpPostedFileBase[] Files { get; set; }
     }
 }
